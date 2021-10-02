@@ -89,7 +89,7 @@ def get_config_mp(wav_path, conf_path,
             )
     pool.close()
     pool.join()
-    wid = open(os.path.join(conf_path, 'tr.lst'), 'w')
+    wid = open(os.path.join(conf_path, 'tr_cfg.lst'), 'w')
 
     for item in result:
         wid.write(item)
@@ -165,7 +165,7 @@ def mix_func_mp(conf_path, dump_dir, sample_rate=8000, num_process=12):
     '''
     according to the config file to generate data and then save in save_dir
     '''
-    lines = open(os.path.join(conf_path, 'tr.lst'), 'r')
+    lines = open(os.path.join(conf_path, 'tr_cfg.lst'), 'r')
     
     pool = mp.Pool(num_process)
 
@@ -197,10 +197,10 @@ def main(args):
     if not os.path.isdir(os.path.join(dump_dir, 'spk2')):
         os.mkdir(os.path.join(dump_dir, 'spk2'))
 
-#    print('LOG: preparing mix config')
-#get_config_mp(wav_path, conf_path, 
-#              snr_range=args.snr_range, sample_rate=args.sample_rate, 
-#			  chunk_len=args.chunk_len, num_process=args.num_process)
+    print('LOG: preparing mix config')
+    get_config_mp(wav_path, conf_path, 
+              snr_range=args.snr_range, sample_rate=args.sample_rate, 
+			  chunk_len=args.chunk_len, num_process=args.num_process)
     
     print('LOG: generating')
     mix_func_mp(conf_path, dump_dir, sample_rate=args.sample_rate, num_process=args.num_process)    

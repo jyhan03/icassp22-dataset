@@ -69,7 +69,7 @@ def get_lst(out_path, lst_num, wav_info_dict, black_list=None):
     if not os.path.exists(out_path):        
         os.makedirs(out_path) 
         
-    wid = open(os.path.join(out_path, 'train.lst'), 'w')
+    wid = open(os.path.join(out_path, 'tr.lst'), 'w')
     for item in wav_list:
         wid.write(item)
     wid.close()      
@@ -79,7 +79,7 @@ def main(data_dir, out_path, lst_num):
     get_lst(out_path, lst_num, wav_info, black_list=None)
     
 if __name__ == "__main__":
-    data_dir = r"/Share/hjy/data/aishell/data_aishell/wav/train"
-    out_path = r"/Share/hjy/data/aishell/data_aishell/wav/mix_lst"
+    data_dir = r"/data/aishell/data_aishell/wav/train"
+    out_path = r"/lst"
     lst_num = 45000
     main(data_dir, out_path, lst_num)

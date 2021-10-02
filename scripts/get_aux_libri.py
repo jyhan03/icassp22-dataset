@@ -59,7 +59,7 @@ def get_aux(odir, lst, wav_info_dict):
                 break
     if not os.path.exists(odir):        
         os.makedirs(odir) 
-    odir = os.path.join(odir, "tt2_aux1.lst")
+    odir = os.path.join(odir, "tt_aux.lst")
     with open(odir, 'w') as f:
         for aux in aux_list:
             f.write(aux+'\n')      
@@ -67,6 +67,6 @@ def get_aux(odir, lst, wav_info_dict):
 if __name__ == "__main__":
     data_dir = r"../test-clean"
     odir = r"./lst"
-    lst = r"./lst/tt2.lst"
+    lst = r"./lst/tt.lst"
     wav_info_dict = get_info_dict(data_dir)
     get_aux(odir, lst, wav_info_dict)

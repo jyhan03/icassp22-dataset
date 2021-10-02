@@ -62,6 +62,6 @@ def get_aux(odir, lst, wav_info_dict):
 if __name__ == "__main__":
     data_dir = r"../train"
     odir = r"./lst"
-    lst = r"./lst/tr_mix.lst"
+    lst = r"./lst/tr.lst"
     wav_info_dict = get_info_dict(data_dir)
     get_aux(odir, lst, wav_info_dict)
