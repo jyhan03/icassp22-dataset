@@ -4,7 +4,7 @@ This repository provides the dataset and its simulation code used in our ICASSP2
 The simulation code of in-domain and source domain dataset can be found in [Yi Luo](https://github.com/yluo42/TAC/tree/master/data) and [Libri2Mix](https://github.com/JorisCos/LibriMix), respectively. 
 
 # Dataset Generation
-For constructing the target domain dataset, Aishell2Mix, please refers to the [scripts](https://github.com/jyhan03/icassp22-dataset/tree/main/scripts):
+For constructing the target domain dataset, Aishell2Mix, please refers to the `scripts`:
 
 * `data_select.py`, randomly select the clean speech from [Aishell-1](https://arxiv.org/pdf/1709.05522.pdf) to generate the mixed speech pairs.
 * `data_simu.py`, generate Aishell2Mix mixture using the `data_select.py` results.
